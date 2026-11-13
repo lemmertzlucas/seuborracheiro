@@ -4,150 +4,259 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Seu Borracheiro – ofertas de pneus de carro e agrícolas</title>
+<meta name="description" content="O Seu Borracheiro garimpa todo dia as melhores promoções de pneus. Busque pela medida e economize.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#f5f5f2; --card:#fff; --ink:#1c1c1c; --muted:#6b6b6b;
-    --brand:#1f3b2c; --accent:#f2b705; --off:#c0392b; --line:#e3e3de;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink)}
-  header{background:var(--brand);color:#fff;padding:22px 16px 18px}
-  .wrap{max-width:1100px;margin:0 auto}
-  header h1{margin:0;font-size:1.5rem;letter-spacing:-.01em}
-  header h1 span{color:var(--accent)}
-  header p{margin:6px 0 0;opacity:.85;font-size:.95rem}
-  .updated{display:inline-block;margin-top:10px;font-size:.78rem;background:rgba(255,255,255,.12);padding:4px 10px;border-radius:999px}
-  .controls{position:sticky;top:0;z-index:5;background:var(--bg);padding:12px 16px;border-bottom:1px solid var(--line)}
-  .tabs{display:flex;gap:8px;overflow-x:auto}
-  .tab{border:1px solid var(--line);background:#fff;color:var(--ink);padding:9px 16px;border-radius:999px;font-size:.92rem;cursor:pointer;white-space:nowrap}
-  .tab.active{background:var(--brand);border-color:var(--brand);color:#fff}
-  .search{margin-top:10px;width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:10px;font-size:1rem;background:#fff}
-  main{padding:16px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-  .img{position:relative;background:#eceae4;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
-  .img svg{width:55%;height:auto}
-  .badge{position:absolute;top:10px;left:10px;background:var(--off);color:#fff;font-weight:700;font-size:.8rem;padding:4px 8px;border-radius:6px}
-  .store{position:absolute;top:10px;right:10px;background:#fff;font-size:.72rem;padding:4px 8px;border-radius:6px;border:1px solid var(--line)}
-  .body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
-  .name{font-size:.95rem;font-weight:600;line-height:1.3}
-  .size{font-size:.8rem;color:var(--muted)}
-  .old{font-size:.82rem;color:var(--muted);text-decoration:line-through}
-  .price{font-size:1.35rem;font-weight:800}
-  .btn{margin-top:auto;display:block;text-align:center;background:var(--accent);color:#1c1c1c;font-weight:700;text-decoration:none;padding:11px;border-radius:10px}
-  .empty{text-align:center;color:var(--muted);padding:40px 0}
-  footer{padding:24px 16px 40px;font-size:.78rem;color:var(--muted);text-align:center;line-height:1.5}
+:root{--pre:#121212;--pre2:#1d1d1d;--am:#ffc400;--am2:#e0a800;--vd:#1fa632;--vd2:#178a28;--vm:#e5392b;--bg:#f4f4f4;--ln:#e3e3e3;--mt:#707070}
+*{box-sizing:border-box}body{margin:0;font-family:Nunito,system-ui,sans-serif;background:var(--bg);color:#1b1b1b}
+a{color:inherit;text-decoration:none}button{font-family:inherit}
+.w{max-width:1100px;margin:0 auto;padding:0 16px}
+/* topo */
+.aviso{background:#000;color:#ddd;font-size:.85rem;text-align:center;padding:8px 12px}
+.aviso b{color:var(--am)}
+header.topo{background:radial-gradient(600px 160px at 8% 50%,rgba(255,196,0,.22),transparent 70%),radial-gradient(500px 160px at 95% 40%,rgba(255,196,0,.14),transparent 70%),repeating-linear-gradient(115deg,#151515 0 14px,#1a1a1a 14px 28px);color:#fff}
+.lin{display:flex;align-items:center;gap:28px;padding:18px 16px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:900;font-size:1.45rem;letter-spacing:-.02em;white-space:nowrap;font-style:italic;text-transform:uppercase}
+.logo span{color:var(--am)}.logo svg{width:34px}
+.busca{flex:1;display:flex;align-items:center;background:#fff;border-radius:999px;padding:0 16px;height:44px}
+.busca svg{width:18px;color:#888}.busca input{flex:1;border:0;outline:0;font:inherit;font-size:.98rem;padding:0 10px;min-width:0}
+.ajuda{display:flex;align-items:center;gap:8px;font-size:.85rem;line-height:1.15;white-space:nowrap}.ajuda svg{width:26px}
+nav.cats{display:flex;justify-content:center;gap:42px;padding:6px 16px 14px;font-weight:800;font-size:.95rem}
+nav.cats a{display:flex;align-items:center;gap:8px;opacity:.92}nav.cats a:hover{color:var(--am)}
+nav.cats svg{width:30px;height:20px}
+nav.cats .em{font-size:.62rem;background:var(--am);color:#000;border-radius:4px;padding:1px 5px;margin-left:2px}
+/* banner */
+.banner{background:#0d0d0d;color:#fff;position:relative;overflow:hidden}
+.slide{display:none;grid-template-columns:1fr 1fr 1fr;align-items:center;gap:10px;min-height:340px;padding:30px 70px 100px}
+.slide.on{display:grid}
+.slide h2{margin:0;font-weight:900;line-height:1.02;text-transform:uppercase;font-size:2.15rem}
+.slide h2 small{display:block;font-size:1.3rem;color:#fff}
+.slide h2 em{font-style:normal;color:var(--am)}
+.slide p{color:#bbb;font-size:.8rem;max-width:300px}
+.pilha{position:relative;height:230px}
+.pilha img{position:absolute;height:210px;filter:drop-shadow(0 18px 24px rgba(0,0,0,.6));border-radius:16px;background:#fff;padding:8px}
+.pilha img:nth-child(1){left:6%;top:14px;transform:rotate(-8deg)}.pilha img:nth-child(2){left:34%;top:0;z-index:2}.pilha img:nth-child(3){right:4%;top:18px;transform:rotate(8deg)}
+.selo{justify-self:center;text-align:center;background:var(--am);color:#000;border-radius:18px;padding:22px 26px;transform:rotate(-3deg);box-shadow:0 10px 0 #8a6a00}
+.selo b{display:block;font-size:4rem;line-height:.9;font-weight:900}.selo span{font-weight:900;text-transform:uppercase}
+.seta{position:absolute;top:42%;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.85);cursor:pointer;font-size:1.3rem;z-index:3}
+.seta.e{left:18px}.seta.d{right:18px}
+.dots{position:absolute;bottom:84px;left:0;right:0;display:flex;justify-content:center;gap:8px}
+.dots i{width:9px;height:9px;border-radius:50%;background:#555;cursor:pointer}.dots i.on{background:#fff}
+/* busca por medida */
+.med{position:relative;margin-top:-62px;z-index:4}
+.med .abas{display:flex;align-items:stretch;background:#c9c9c9;border-radius:14px 14px 0 0;overflow:hidden}
+.med .abas b{background:#fff;color:#c58f00;padding:14px 34px;border-radius:14px 14px 0 0;font-size:.9rem}
+.med .abas span{padding:14px 28px;font-weight:700;font-size:.9rem;color:#444}
+.med .abas a{margin-left:auto;display:flex;align-items:center;gap:8px;padding:0 18px;font-weight:800;font-size:.85rem}
+.med .abas a i{width:20px;height:20px;border-radius:50%;border:2px solid #c58f00;color:#c58f00;font-style:normal;display:grid;place-items:center;font-size:.75rem}
+.med form{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px;background:#fff;padding:16px;border-radius:0 0 14px 14px;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.med label{border:1px solid #cfcfcf;border-radius:8px;padding:6px 10px 4px;display:flex;flex-direction:column}
+.med label small{font-size:.66rem;color:#888;text-transform:uppercase}
+.med select{border:0;outline:0;font:inherit;font-weight:800;font-size:1rem;background:transparent;padding:2px 0}
+.med button{border:0;border-radius:8px;background:var(--vd);color:#fff;font-weight:900;text-transform:uppercase;cursor:pointer;font-size:.95rem}
+.med button:hover{background:var(--vd2)}
+/* beneficios */
+.ben{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px auto}
+.ben div{display:flex;align-items:center;border:1.5px solid #f0c040;border-radius:999px;background:#fff;font-size:.86rem;line-height:1.2;padding-right:14px}
+.ben svg{flex:none;width:52px;height:52px;padding:12px;border-radius:50%;background:var(--am);color:#000;margin:-2px 12px -2px -2px}
+.ben b{color:#a27700;display:block}
+/* titulos */
+.tit{display:flex;align-items:center;justify-content:space-between;margin:34px 0 16px}
+.tit h3{margin:0;font-size:1.25rem;font-weight:900;text-transform:uppercase;display:flex;gap:8px;align-items:center}
+.tit h3 em{font-style:normal;color:#c58f00}.tit h3 svg{width:20px;color:#c58f00}
+.tit .ctr{display:flex;gap:8px}.tit .ctr button{width:36px;height:36px;border-radius:50%;border:1px solid var(--ln);background:#fff;cursor:pointer;font-size:1.1rem}
+/* cards */
+.trilho{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:6px;scrollbar-width:none}
+.trilho::-webkit-scrollbar{display:none}
+.trilho .card{flex:0 0 250px;scroll-snap-align:start}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.card{background:#fff;border:1px solid var(--ln);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;position:relative;transition:box-shadow .15s,border-color .15s}
+.card:hover{border-color:#f0c040;box-shadow:0 10px 26px rgba(0,0,0,.09);background:linear-gradient(#fff 60%,#fff8e6)}
+.marca{align-self:center;margin-top:12px;min-width:150px;text-align:center;font-weight:900;font-size:1.05rem;padding:6px 14px;border-radius:4px;letter-spacing:.01em}
+.foto{position:relative;height:230px;display:flex;align-items:center;justify-content:center;padding:10px 18px}
+.foto img{max-height:100%;max-width:100%;object-fit:contain}
+.foto svg{width:58%}
+.pil{position:absolute;bottom:4px;left:50%;transform:translateX(-50%);background:#ff5a1f;color:#fff;font-weight:900;font-size:.8rem;padding:5px 12px;border-radius:999px;white-space:nowrap;text-transform:uppercase}
+.acoes{position:absolute;inset:auto 0 46px 0;display:flex;justify-content:center;gap:8px;opacity:0;transition:opacity .15s}
+.card:hover .acoes{opacity:1}
+.acoes a{background:var(--vd);color:#fff;font-weight:800;font-size:.82rem;padding:8px 14px;border-radius:6px}
+.acoes a.b{background:#fff;color:#444;border:1px solid #ccc}
+.inf{padding:10px 14px 16px;text-align:center;display:flex;flex-direction:column;gap:4px;flex:1}
+.inf h4{margin:0;font-size:1rem;font-weight:800;line-height:1.25;min-height:2.5em}
+.de{font-size:.8rem;color:var(--mt);text-decoration:line-through;margin-top:auto}
+.por{font-size:1.55rem;font-weight:900}
+.loja{font-size:.78rem;color:var(--mt)}
+.eco{font-size:.8rem;font-weight:800;color:#c58f00}
+.vazio{display:none;text-align:center;background:#fff;border:1px dashed #ccc;border-radius:12px;padding:40px 16px;color:var(--mt)}
+.vazio.on{display:block}.vazio b{display:block;font-size:1.2rem;color:#1b1b1b;margin-bottom:4px}
+/* marcas */
+.marcas{background:#fff;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln);margin-top:36px;padding:22px 0}
+.marcas .w{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.marcas button{border:0;cursor:pointer;height:42px;border-radius:4px;font-weight:900;font-size:1.05rem}
+.marcas button:hover{filter:brightness(1.08);transform:translateY(-1px)}
+/* medida */
+.leia{display:grid;grid-template-columns:1fr 1.3fr;gap:24px;align-items:center;background:var(--pre);color:#fff;border-radius:16px;padding:26px;margin:36px auto}
+.leia h3{margin:0 0 6px;font-weight:900;text-transform:uppercase}.leia p{margin:0;color:#bbb;font-size:.92rem}
+.cod{display:flex;gap:8px}.cod div{flex:1;background:#222;border:1px solid #333;border-radius:10px;text-align:center;padding:10px 6px}
+.cod b{display:block;font-size:1.7rem;color:var(--am);font-weight:900}.cod span{font-size:.7rem;color:#aaa}
+footer{background:var(--pre);color:#aaa;font-size:.8rem;line-height:1.6;padding:28px 0}
+footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer p{margin:0;max-width:700px}
+@media(max-width:860px){
+ .lin{flex-wrap:wrap;gap:12px}.busca{order:3;flex-basis:100%}.ajuda{margin-left:auto}
+ nav.cats{gap:18px;overflow-x:auto;justify-content:flex-start;font-size:.85rem}
+ .slide{grid-template-columns:1fr;padding:24px 24px 80px;min-height:0;text-align:center}.slide .pilha{display:none}.slide p{margin:8px auto}
+ .seta{display:none}.med form{grid-template-columns:1fr 1fr 1fr}.med button{grid-column:1/-1;height:46px}
+ .med .abas a{display:none}.ben{grid-template-columns:1fr 1fr}.marcas .w{grid-template-columns:repeat(2,1fr)}.leia{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
-
-<header>
-  <div class="wrap">
-    <h1>Seu <span>Borracheiro</span></h1>
-    <p>O borracheiro que garimpa as melhores promoções de pneus de carro e agrícolas pra você, todo dia.</p>
-    <div class="updated" id="updated"></div>
-  </div>
+<div class="aviso">As melhores ofertas de pneus da internet, <b>garimpadas todo dia</b> pra você não pagar caro.</div>
+<header class="topo">
+ <div class="w lin">
+  <a class="logo" href="#"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#ffc400"/><circle cx="50" cy="50" r="33" fill="#121212"/><circle cx="50" cy="50" r="15" fill="#ffc400"/></svg>Seu<span>Borracheiro</span></a>
+  <label class="busca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="q" type="search" placeholder="Busque por medida ou marca (ex.: 175/70R14, Pirelli)"></label>
+  <a class="ajuda" href="#leia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6M12 17h.01"/></svg>Como ler a<br>medida do pneu</a>
+ </div>
+ <nav class="cats">
+  <a href="#" data-cat="carro"><svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17h3m34 0h3V12l-6-2-6-5H16l-7 5-5 1v6"/><circle cx="12" cy="17" r="3"/><circle cx="36" cy="17" r="3"/></svg>Carro, Caminhonete e SUV</a>
+  <a href="#" data-cat="agricola"><svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="34" cy="15" r="7"/><circle cx="10" cy="18" r="4"/><path d="M14 18h13M6 14V7h12l4 7M18 7V3h6"/></svg>Agrícola <span class="em">EM BREVE</span></a>
+ </nav>
 </header>
 
-<div class="controls">
-  <div class="wrap">
-    <div class="tabs">
-      <button class="tab active" data-cat="todos">Todos</button>
-      <button class="tab" data-cat="carro">Pneus de carro</button>
-      <button class="tab" data-cat="agricola">Pneus agrícolas</button>
-    </div>
-    <input class="search" id="search" type="search" placeholder="Buscar por medida (ex.: 175/70R14) ou nome">
-  </div>
+<section class="banner" id="banner">
+ <div class="slide on">
+  <div><h2><small>Ofertas da semana</small>Pneus aro <em>14, 15 e 16</em></h2><p id="atualiz"></p></div>
+  <div class="pilha" id="pilha1"></div>
+  <div class="selo"><span>até</span><b id="maxoff">–</b><span>de desconto</span></div>
+ </div>
+ <div class="slide">
+  <div><h2><small>Tá na hora de trocar?</small>Ache o pneu <em>pela medida</em></h2><p>Escolhe largura, altura e aro aqui embaixo e a gente mostra a oferta mais barata.</p></div>
+  <div class="pilha" id="pilha2"></div>
+  <div class="selo"><span>a partir de</span><b id="menor" style="font-size:2.6rem">–</b><span>o pneu</span></div>
+ </div>
+ <button class="seta e" aria-label="Anterior">‹</button><button class="seta d" aria-label="Próximo">›</button>
+ <div class="dots"></div>
+</section>
+
+<div class="w med">
+ <div class="abas"><b>Por medida</b><span>Por veículo · em breve</span><a href="#leia"><i>?</i>Como leio a medida do pneu?</a></div>
+ <form id="fm">
+  <label><small>Largura</small><select id="sl"></select></label>
+  <label><small>Altura</small><select id="sa"></select></label>
+  <label><small>Aro</small><select id="sr"></select></label>
+  <button>Pesquisar</button>
+ </form>
 </div>
 
-<main>
-  <div class="wrap">
-    <div class="grid" id="grid"></div>
-    <div class="empty" id="empty" hidden>Nenhum pneu encontrado com esse filtro.</div>
-  </div>
+<div class="w ben">
+ <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5M21 12a9 9 0 0 1-15 6.7L3 16m0 5v-5h5"/></svg><span><b>Ofertas atualizadas</b>revisadas todo dia</span></div>
+ <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span><b>Compra segura</b>direto em lojas grandes</span></div>
+ <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg><span><b>Entrega pela loja</b>pra todo o Brasil</span></div>
+ <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2.2 0 3 6 1.6 6 4.6 0 1.3-1.3 2.2-3 2.2-1.4 0-2.6-.6-3-1.6M12 6v2m0 8v2"/></svg><span><b>Sem custo extra</b>mesmo preço da loja</span></div>
+</div>
+
+<main class="w">
+ <div class="tit"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg>Ofertas em <em>destaque</em></h3><div class="ctr"><button data-m="-1">‹</button><button data-m="1">›</button></div></div>
+ <div class="trilho" id="trilho"></div>
+
+ <div class="tit" id="todas"><h3 id="tt">Todas as <em>ofertas</em></h3></div>
+ <div class="grade" id="grade"></div>
+ <div class="vazio" id="vazio"><b id="vt"></b><span id="vx"></span></div>
 </main>
 
-<footer>
-  Como Associado da Amazon, o Seu Borracheiro ganha com compras qualificadas. Ao comprar pelos links, podemos
-  receber uma comissão, sem custo extra para você. Preços e disponibilidade são os vistos na data de atualização
-  indicada no topo e podem mudar a qualquer momento; o preço que vale é o mostrado na loja no momento da compra.
-</footer>
+<section class="marcas"><div class="w" id="marcas"></div></section>
+
+<section class="w leia" id="leia">
+ <div><h3>Como ler a medida do pneu</h3><p>A medida tá escrita na lateral do pneu do teu carro. Olha lá e escolhe os mesmos números na busca por medida.</p></div>
+ <div class="cod"><div><b>175</b><span>largura (mm)</span></div><div><b>70</b><span>altura (% largura)</span></div><div><b>R14</b><span>aro</span></div><div><b>84T</b><span>carga/velocidade</span></div></div>
+</section>
+
+<footer><div class="w"><p>Como Associado da Amazon, o Seu Borracheiro ganha com compras qualificadas. Ao comprar pelos links, podemos receber uma comissão, sem custo extra pra você. Preços e disponibilidade são os vistos na data de atualização e podem mudar a qualquer momento; vale o preço mostrado na loja na hora da compra.</p><p>© 2026 Seu Borracheiro</p></div></footer>
 
 <script>
 /* ===== DADOS — a rotina automática vai reescrever só este bloco ===== */
 const ATUALIZADO_EM = "13/11/2026 às 14h";
 const PRODUTOS = [
-  { nome:"Pneu Firestone F-600 175/70R14 84T", categoria:"carro", medida:"175/70R14", loja:"Amazon",
-    preco:303.36, precoAntigo:401.13, link:"https://www.amazon.com.br/dp/B07XBTY36X?tag=seuborracheir-20" },
-  { nome:"Pneu Kumho ES31 175/70R14 84T", categoria:"carro", medida:"175/70R14", loja:"Amazon",
-    preco:293.71, precoAntigo:345.55, link:"https://www.amazon.com.br/dp/B0DMFVZ935?tag=seuborracheir-20" },
-  { nome:"Pneu Continental PowerContact 2 175/70R14 84T", categoria:"carro", medida:"175/70R14", loja:"Amazon",
-    preco:359.82, precoAntigo:423.33, link:"https://www.amazon.com.br/dp/B07X9V7PLG?tag=seuborracheir-20" },
-  { nome:"Pneu Continental ContiPowerContact 175/65R14 82T", categoria:"carro", medida:"175/65R14", loja:"Amazon",
-    preco:306.33, precoAntigo:425.33, link:"https://www.amazon.com.br/dp/B07XBTXPFK?tag=seuborracheir-20" },
-  { nome:"Pneu Firestone F-600 175/65R14 82T", categoria:"carro", medida:"175/65R14", loja:"Amazon",
-    preco:284.09, precoAntigo:352.95, link:"https://www.amazon.com.br/dp/B0CCW5VXK1?tag=seuborracheir-20" },
-  { nome:"Pneu Goodyear Kelly Edge Touring 2 175/65R14 86H", categoria:"carro", medida:"175/65R14", loja:"Amazon",
-    preco:278.90, precoAntigo:329.90, link:"https://www.amazon.com.br/dp/B0CQ6QYWF6?tag=seuborracheir-20" },
-  { nome:"Pneu Bridgestone Ecopia EP150 185/65R15 88H", categoria:"carro", medida:"185/65R15", loja:"Amazon",
-    preco:450.78, precoAntigo:586.00, link:"https://www.amazon.com.br/dp/B0CCW58QRW?tag=seuborracheir-20" },
-  { nome:"Pneu Continental PowerContact 2 185/65R15 88H", categoria:"carro", medida:"185/65R15", loja:"Amazon",
-    preco:427.93, precoAntigo:503.44, link:"https://www.amazon.com.br/dp/B0H3W4WWRF?tag=seuborracheir-20" },
-  { nome:"Pneu Continental UltraContact 185/65R15 88H", categoria:"carro", medida:"185/65R15", loja:"Amazon",
-    preco:442.52, precoAntigo:520.61, link:"https://www.amazon.com.br/dp/B0H3VNXPZK?tag=seuborracheir-20" },
-  { nome:"Pneu Goodyear Eagle Sport 2 205/55R16 91V", categoria:"carro", medida:"205/55R16", loja:"Amazon",
-    preco:408.49, precoAntigo:578.00, link:"https://www.amazon.com.br/dp/B0BW2S55CF?tag=seuborracheir-20" },
-  { nome:"Pneu Barum Bravuris 5HM 205/55R16 91V (by Continental)", categoria:"carro", medida:"205/55R16", loja:"Amazon",
-    preco:361.16, precoAntigo:460.00, link:"https://www.amazon.com.br/dp/B096SX3JYN?tag=seuborracheir-20" },
-  { nome:"Pneu Pirelli P400 Evo 205/55R16 91V", categoria:"carro", medida:"205/55R16", loja:"Amazon",
-    preco:396.87, precoAntigo:466.89, link:"https://www.amazon.com.br/dp/B0DTRP8PGK?tag=seuborracheir-20" }
+ {marca:"Firestone",modelo:"F-600 84T",medida:"175/70R14",categoria:"carro",loja:"Amazon",preco:303.36,precoAntigo:401.13,img:"51p+s68IfwL",asin:"B07XBTY36X"},
+ {marca:"Kumho",modelo:"ES31 84T",medida:"175/70R14",categoria:"carro",loja:"Amazon",preco:293.71,precoAntigo:345.55,img:"61-BkRGAl4L",asin:"B0DMFVZ935"},
+ {marca:"Continental",modelo:"PowerContact 2 84T",medida:"175/70R14",categoria:"carro",loja:"Amazon",preco:359.82,precoAntigo:423.33,img:"61ESIfENIBL",asin:"B07X9V7PLG"},
+ {marca:"Continental",modelo:"ContiPowerContact 82T",medida:"175/65R14",categoria:"carro",loja:"Amazon",preco:306.33,precoAntigo:425.33,img:"61C+Zbiq-bL",asin:"B07XBTXPFK"},
+ {marca:"Firestone",modelo:"F-600 82T",medida:"175/65R14",categoria:"carro",loja:"Amazon",preco:284.09,precoAntigo:352.95,img:"71Sfz3VmF-L",asin:"B0CCW5VXK1"},
+ {marca:"Goodyear",modelo:"Kelly Edge Touring 2 86H",medida:"175/65R14",categoria:"carro",loja:"Amazon",preco:278.90,precoAntigo:329.90,img:"517AbB3vBgL",asin:"B0CQ6QYWF6"},
+ {marca:"Bridgestone",modelo:"Ecopia EP150 88H",medida:"185/65R15",categoria:"carro",loja:"Amazon",preco:450.78,precoAntigo:586.00,img:"61Kf3VtlytL",asin:"B0CCW58QRW"},
+ {marca:"Continental",modelo:"PowerContact 2 88H",medida:"185/65R15",categoria:"carro",loja:"Amazon",preco:427.93,precoAntigo:503.44,img:"61RKZzxy2IL",asin:"B0H3W4WWRF"},
+ {marca:"Continental",modelo:"UltraContact 88H",medida:"185/65R15",categoria:"carro",loja:"Amazon",preco:442.52,precoAntigo:520.61,img:"61ybrxKuIiL",asin:"B0H3VNXPZK"},
+ {marca:"Goodyear",modelo:"Eagle Sport 2 91V",medida:"205/55R16",categoria:"carro",loja:"Amazon",preco:408.49,precoAntigo:578.00,img:"51cmlXNq+vL",asin:"B0BW2S55CF"},
+ {marca:"Barum",modelo:"Bravuris 5HM 91V",medida:"205/55R16",categoria:"carro",loja:"Amazon",preco:361.16,precoAntigo:460.00,img:"61a34mfdMtL",asin:"B096SX3JYN"},
+ {marca:"Pirelli",modelo:"P400 Evo 91V",medida:"205/55R16",categoria:"carro",loja:"Amazon",preco:396.87,precoAntigo:466.89,img:"61ZNtefZPxL",asin:"B0DTRP8PGK"}
 ];
+const TAG = "seuborracheir-20";
 /* ===== FIM DOS DADOS ===== */
 
-const iconeCarro = `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#2b2b2b"/><circle cx="50" cy="50" r="28" fill="#bfc3c7"/><circle cx="50" cy="50" r="8" fill="#7d8287"/><g stroke="#7d8287" stroke-width="5">${[0,72,144,216,288].map(a=>`<line x1="50" y1="50" x2="${50+24*Math.cos(a*Math.PI/180)}" y2="${50+24*Math.sin(a*Math.PI/180)}"/>`).join("")}</g></svg>`;
-const iconeAgricola = `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#2b2b2b"/>${Array.from({length:12},(_,i)=>{const a=i*30*Math.PI/180;return `<line x1="${50+34*Math.cos(a)}" y1="${50+34*Math.sin(a)}" x2="${50+46*Math.cos(a+0.3)}" y2="${50+46*Math.sin(a+0.3)}" stroke="#4a4a4a" stroke-width="6"/>`}).join("")}<circle cx="50" cy="50" r="22" fill="#e0b31a"/><circle cx="50" cy="50" r="7" fill="#8a6d0c"/></svg>`;
+const CORES={Firestone:["#d71920","#fff"],Goodyear:["#003a8c","#ffd100"],Continental:["#ffa500","#000"],Pirelli:["#ffd100","#d6001c"],Bridgestone:["#e6e6e6","#111"],Kumho:["#e60012","#fff"],Barum:["#ffe000","#0a3a8c"],Michelin:["#27509b","#fff"]};
+const $=id=>document.getElementById(id);
+const pneuSVG='<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#222"/><circle cx="50" cy="50" r="30" fill="#c8c8c8"/><circle cx="50" cy="50" r="9" fill="#777"/></svg>';
+const img=p=>"https://m.media-amazon.com/images/I/"+encodeURIComponent(p.img)+"._AC_SL400_.jpg";
+const link=p=>"https://www.amazon.com.br/dp/"+p.asin+"?tag="+TAG;
+const brl=v=>"R$ "+v.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
+const off=p=>p.precoAntigo>p.preco?Math.round((1-p.preco/p.precoAntigo)*100):0;
+const parte=m=>{const x=m.match(/(\d+)\/(\d+)R(\d+)/);return{l:x[1],a:x[2],r:x[3]}};
+const fotoHTML=p=>`<img src="${img(p)}" alt="Pneu ${p.marca} ${p.modelo} ${p.medida}" loading="lazy" onerror="this.outerHTML=pneuSVG">`;
 
-const brl = v => v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
-const desconto = p => p.precoAntigo > p.preco ? Math.round((1 - p.preco/p.precoAntigo)*100) : 0;
-
-let categoria = "todos";
-const grid = document.getElementById("grid");
-const empty = document.getElementById("empty");
-const search = document.getElementById("search");
-document.getElementById("updated").textContent = "Preços consultados em " + ATUALIZADO_EM;
-
-function render(){
-  const termo = search.value.trim().toLowerCase();
-  const lista = PRODUTOS
-    .filter(p => categoria === "todos" || p.categoria === categoria)
-    .filter(p => !termo || p.nome.toLowerCase().includes(termo) || p.medida.toLowerCase().includes(termo))
-    .sort((a,b) => desconto(b) - desconto(a));
-  grid.innerHTML = lista.map(p => `
-    <article class="card">
-      <div class="img">
-        ${p.categoria === "agricola" ? iconeAgricola : iconeCarro}
-        ${desconto(p) ? `<span class="badge">-${desconto(p)}%</span>` : ""}
-        <span class="store">${p.loja}</span>
-      </div>
-      <div class="body">
-        <div class="name">${p.nome}</div>
-        <div class="size">Medida: ${p.medida}</div>
-        ${p.precoAntigo > p.preco ? `<div class="old">${brl(p.precoAntigo)}</div>` : ""}
-        <div class="price">${brl(p.preco)}</div>
-        <a class="btn" href="${p.link}" target="_blank" rel="noopener sponsored">Ver oferta</a>
-      </div>
-    </article>`).join("");
-  empty.textContent = categoria === "agricola" ? "Ofertas de pneus agrícolas chegando em breve!" : "Nenhum pneu encontrado com esse filtro.";
-  empty.hidden = lista.length > 0;
+function card(p){
+ const [bg,fg]=CORES[p.marca]||["#222","#fff"],o=off(p),e=p.precoAntigo-p.preco;
+ return `<article class="card">
+  <span class="marca" style="background:${bg};color:${fg}">${p.marca}</span>
+  <a class="foto" href="${link(p)}" target="_blank" rel="noopener sponsored nofollow">${fotoHTML(p)}${o?`<span class="pil">${o}% OFF</span>`:""}</a>
+  <div class="acoes"><a href="${link(p)}" target="_blank" rel="noopener sponsored nofollow">Ver oferta ›</a></div>
+  <div class="inf"><h4>${p.medida} ${p.marca} ${p.modelo}</h4>
+   ${o?`<div class="de">${brl(p.precoAntigo)}</div>`:""}<div class="por">${brl(p.preco)}</div>
+   ${e>0?`<div class="eco">Economize ${brl(e)}</div>`:""}<div class="loja">na ${p.loja}</div></div>
+ </article>`;
 }
 
-document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () => {
-  document.querySelectorAll(".tab").forEach(x => x.classList.remove("active"));
-  t.classList.add("active");
-  categoria = t.dataset.cat;
-  render();
-}));
-search.addEventListener("input", render);
+/* banner */
+const ord=[...PRODUTOS].sort((a,b)=>off(b)-off(a));
+$("atualiz").textContent="Preços consultados em "+ATUALIZADO_EM+". Podem mudar a qualquer momento.";
+$("maxoff").textContent=off(ord[0])+"%";
+$("menor").textContent="R$"+Math.floor(Math.min(...PRODUTOS.map(p=>p.preco)));
+$("pilha1").innerHTML=ord.slice(0,3).map(p=>`<img src="${img(p)}" alt="">`).join("");
+$("pilha2").innerHTML=ord.slice(3,6).map(p=>`<img src="${img(p)}" alt="">`).join("");
+const slides=[...document.querySelectorAll(".slide")];let s=0;
+const dots=document.querySelector(".dots");slides.forEach((_,i)=>{const d=document.createElement("i");d.onclick=()=>ir(i);dots.appendChild(d)});
+function ir(i){s=(i+slides.length)%slides.length;slides.forEach((x,j)=>x.classList.toggle("on",j===s));[...dots.children].forEach((x,j)=>x.classList.toggle("on",j===s))}
+document.querySelector(".seta.e").onclick=()=>ir(s-1);document.querySelector(".seta.d").onclick=()=>ir(s+1);
+ir(0);setInterval(()=>ir(s+1),6000);
+
+/* busca por medida */
+const uniq=k=>[...new Set(PRODUTOS.map(p=>parte(p.medida)[k]))].sort((a,b)=>a-b);
+const opt=(el,vals,lbl)=>{el.innerHTML=`<option value="">${lbl}</option>`+vals.map(v=>`<option>${v}</option>`).join("")};
+opt($("sl"),uniq("l"),"Todas");opt($("sa"),uniq("a"),"Todas");opt($("sr"),uniq("r"),"Todos");
+
+let filtro={cat:"carro",l:"",a:"",r:"",q:"",marca:""};
+function render(){
+ const q=filtro.q.toLowerCase().replace(/\s/g,"");
+ const lista=ord.filter(p=>{const m=parte(p.medida);
+  return p.categoria===filtro.cat&&(!filtro.l||m.l===filtro.l)&&(!filtro.a||m.a===filtro.a)&&(!filtro.r||m.r===filtro.r)&&(!filtro.marca||p.marca===filtro.marca)
+   &&(!q||(p.medida+p.marca+p.modelo).toLowerCase().replace(/\s/g,"").includes(q))});
+ $("grade").innerHTML=lista.map(card).join("");
+ const desc=[filtro.l&&("largura "+filtro.l),filtro.a&&("altura "+filtro.a),filtro.r&&("aro "+filtro.r),filtro.marca,filtro.q&&("“"+filtro.q+"”")].filter(Boolean).join(", ");
+ $("tt").innerHTML=desc?`Resultado: <em>${desc}</em>`:"Todas as <em>ofertas</em>";
+ const v=!lista.length;$("vazio").classList.toggle("on",v);
+ if(v){if(filtro.cat==="agricola"){$("vt").textContent="Pneus agrícolas chegando em breve";$("vx").textContent="Estamos fechando parceria com lojas de pneu agrícola. Logo as ofertas de pneu de trator aparecem aqui."}
+  else{$("vt").textContent="Ainda não temos oferta pra essa busca";$("vx").textContent="Tenta outra medida ou volta amanhã, que a gente atualiza as ofertas todo dia."}}
+}
+$("trilho").innerHTML=ord.slice(0,8).map(card).join("");
+document.querySelectorAll(".ctr button").forEach(b=>b.onclick=()=>$("trilho").scrollBy({left:+b.dataset.m*264,behavior:"smooth"}));
+$("fm").onsubmit=e=>{e.preventDefault();Object.assign(filtro,{cat:"carro",l:$("sl").value,a:$("sa").value,r:$("sr").value,q:"",marca:""});$("q").value="";render();$("todas").scrollIntoView({behavior:"smooth"})};
+$("q").oninput=()=>{filtro.q=$("q").value.trim();filtro.cat="carro";render()};
+$("q").onkeydown=e=>{if(e.key==="Enter")$("todas").scrollIntoView({behavior:"smooth"})};
+document.querySelectorAll("nav.cats a").forEach(a=>a.onclick=e=>{e.preventDefault();filtro={cat:a.dataset.cat,l:"",a:"",r:"",q:"",marca:""};render();$("todas").scrollIntoView({behavior:"smooth"})});
+/* marcas */
+$("marcas").innerHTML=[...new Set(PRODUTOS.map(p=>p.marca))].map(m=>{const[bg,fg]=CORES[m]||["#222","#fff"];return`<button style="background:${bg};color:${fg}" data-m="${m}">${m}</button>`}).join("");
+document.querySelectorAll("#marcas button").forEach(b=>b.onclick=()=>{filtro={cat:"carro",l:"",a:"",r:"",q:"",marca:b.dataset.m};render();$("todas").scrollIntoView({behavior:"smooth"})});
 render();
 </script>
 </body>
