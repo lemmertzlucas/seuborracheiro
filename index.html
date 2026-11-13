@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seu Borracheiro – ofertas de pneus de carro e agrícolas</title>
+<style>
+  :root{
+    --bg:#f5f5f2; --card:#fff; --ink:#1c1c1c; --muted:#6b6b6b;
+    --brand:#1f3b2c; --accent:#f2b705; --off:#c0392b; --line:#e3e3de;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+  header{background:var(--brand);color:#fff;padding:22px 16px 18px}
+  .wrap{max-width:1100px;margin:0 auto}
+  header h1{margin:0;font-size:1.5rem;letter-spacing:-.01em}
+  header h1 span{color:var(--accent)}
+  header p{margin:6px 0 0;opacity:.85;font-size:.95rem}
+  .updated{display:inline-block;margin-top:10px;font-size:.78rem;background:rgba(255,255,255,.12);padding:4px 10px;border-radius:999px}
+  .controls{position:sticky;top:0;z-index:5;background:var(--bg);padding:12px 16px;border-bottom:1px solid var(--line)}
+  .tabs{display:flex;gap:8px;overflow-x:auto}
+  .tab{border:1px solid var(--line);background:#fff;color:var(--ink);padding:9px 16px;border-radius:999px;font-size:.92rem;cursor:pointer;white-space:nowrap}
+  .tab.active{background:var(--brand);border-color:var(--brand);color:#fff}
+  .search{margin-top:10px;width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:10px;font-size:1rem;background:#fff}
+  main{padding:16px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .img{position:relative;background:#eceae4;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
+  .img svg{width:55%;height:auto}
+  .badge{position:absolute;top:10px;left:10px;background:var(--off);color:#fff;font-weight:700;font-size:.8rem;padding:4px 8px;border-radius:6px}
+  .store{position:absolute;top:10px;right:10px;background:#fff;font-size:.72rem;padding:4px 8px;border-radius:6px;border:1px solid var(--line)}
+  .body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .name{font-size:.95rem;font-weight:600;line-height:1.3}
+  .size{font-size:.8rem;color:var(--muted)}
+  .old{font-size:.82rem;color:var(--muted);text-decoration:line-through}
+  .price{font-size:1.35rem;font-weight:800}
+  .btn{margin-top:auto;display:block;text-align:center;background:var(--accent);color:#1c1c1c;font-weight:700;text-decoration:none;padding:11px;border-radius:10px}
+  .empty{text-align:center;color:var(--muted);padding:40px 0}
+  footer{padding:24px 16px 40px;font-size:.78rem;color:var(--muted);text-align:center;line-height:1.5}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Seu <span>Borracheiro</span></h1>
+    <p>O borracheiro que garimpa as melhores promoções de pneus de carro e agrícolas pra você, todo dia.</p>
+    <div class="updated" id="updated"></div>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="wrap">
+    <div class="tabs">
+      <button class="tab active" data-cat="todos">Todos</button>
+      <button class="tab" data-cat="carro">Pneus de carro</button>
+      <button class="tab" data-cat="agricola">Pneus agrícolas</button>
+    </div>
+    <input class="search" id="search" type="search" placeholder="Buscar por medida (ex.: 175/70R14) ou nome">
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty" hidden>Nenhum pneu encontrado com esse filtro.</div>
+  </div>
+</main>
+
+<footer>
+  Este site participa de programas de afiliados (Amazon Associados e PneuStore). Ao comprar pelos links,
+  podemos receber uma comissão, sem custo extra para você. Preços e disponibilidade podem mudar a qualquer momento.
+</footer>
+
+<script>
+/* ===== DADOS — a rotina automática vai reescrever só este bloco ===== */
+const ATUALIZADO_EM = "13/11/2026";
+const PRODUTOS = [
+  { nome:"Pneu Aro 15 195/55R15 85V (exemplo)", categoria:"carro", medida:"195/55R15", loja:"Amazon",
+    preco:389.90, precoAntigo:459.90, link:"https://www.amazon.com.br/dp/XXXXXXXX?tag=SEU-TAG-20" },
+  { nome:"Pneu Aro 14 175/70R14 84T (exemplo)", categoria:"carro", medida:"175/70R14", loja:"Amazon",
+    preco:299.90, precoAntigo:329.90, link:"https://www.amazon.com.br/dp/XXXXXXXX?tag=SEU-TAG-20" },
+  { nome:"Pneu Aro 16 205/55R16 91V (exemplo)", categoria:"carro", medida:"205/55R16", loja:"Amazon",
+    preco:429.90, precoAntigo:519.90, link:"https://www.amazon.com.br/dp/XXXXXXXX?tag=SEU-TAG-20" },
+  { nome:"Pneu Agrícola 18.4-30 R1 10 lonas (exemplo)", categoria:"agricola", medida:"18.4-30", loja:"PneuStore",
+    preco:4890.00, precoAntigo:5590.00, link:"https://www.pneustore.com.br/SEU-LINK-DE-AFILIADO" },
+  { nome:"Pneu Agrícola 14.9-24 R1 8 lonas (exemplo)", categoria:"agricola", medida:"14.9-24", loja:"PneuStore",
+    preco:2790.00, precoAntigo:3150.00, link:"https://www.pneustore.com.br/SEU-LINK-DE-AFILIADO" }
+];
+/* ===== FIM DOS DADOS ===== */
+
+const iconeCarro = `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#2b2b2b"/><circle cx="50" cy="50" r="28" fill="#bfc3c7"/><circle cx="50" cy="50" r="8" fill="#7d8287"/><g stroke="#7d8287" stroke-width="5">${[0,72,144,216,288].map(a=>`<line x1="50" y1="50" x2="${50+24*Math.cos(a*Math.PI/180)}" y2="${50+24*Math.sin(a*Math.PI/180)}"/>`).join("")}</g></svg>`;
+const iconeAgricola = `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#2b2b2b"/>${Array.from({length:12},(_,i)=>{const a=i*30*Math.PI/180;return `<line x1="${50+34*Math.cos(a)}" y1="${50+34*Math.sin(a)}" x2="${50+46*Math.cos(a+0.3)}" y2="${50+46*Math.sin(a+0.3)}" stroke="#4a4a4a" stroke-width="6"/>`}).join("")}<circle cx="50" cy="50" r="22" fill="#e0b31a"/><circle cx="50" cy="50" r="7" fill="#8a6d0c"/></svg>`;
+
+const brl = v => v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const desconto = p => p.precoAntigo > p.preco ? Math.round((1 - p.preco/p.precoAntigo)*100) : 0;
+
+let categoria = "todos";
+const grid = document.getElementById("grid");
+const empty = document.getElementById("empty");
+const search = document.getElementById("search");
+document.getElementById("updated").textContent = "Atualizado em " + ATUALIZADO_EM;
+
+function render(){
+  const termo = search.value.trim().toLowerCase();
+  const lista = PRODUTOS
+    .filter(p => categoria === "todos" || p.categoria === categoria)
+    .filter(p => !termo || p.nome.toLowerCase().includes(termo) || p.medida.toLowerCase().includes(termo))
+    .sort((a,b) => desconto(b) - desconto(a));
+  grid.innerHTML = lista.map(p => `
+    <article class="card">
+      <div class="img">
+        ${p.categoria === "agricola" ? iconeAgricola : iconeCarro}
+        ${desconto(p) ? `<span class="badge">-${desconto(p)}%</span>` : ""}
+        <span class="store">${p.loja}</span>
+      </div>
+      <div class="body">
+        <div class="name">${p.nome}</div>
+        <div class="size">Medida: ${p.medida}</div>
+        ${p.precoAntigo > p.preco ? `<div class="old">${brl(p.precoAntigo)}</div>` : ""}
+        <div class="price">${brl(p.preco)}</div>
+        <a class="btn" href="${p.link}" target="_blank" rel="noopener sponsored">Ver oferta</a>
+      </div>
+    </article>`).join("");
+  empty.hidden = lista.length > 0;
+}
+
+document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () => {
+  document.querySelectorAll(".tab").forEach(x => x.classList.remove("active"));
+  t.classList.add("active");
+  categoria = t.dataset.cat;
+  render();
+}));
+search.addEventListener("input", render);
+render();
+</script>
+</body>
+</html>
