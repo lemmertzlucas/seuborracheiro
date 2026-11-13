@@ -1,0 +1,38 @@
+name: Atualizar ofertas
+
+on:
+  schedule:
+    - cron: "17 */2 * * *"   # a cada 2 horas (minuto 17, horário UTC)
+  workflow_dispatch:          # botão "Run workflow" pra rodar na hora
+
+permissions:
+  contents: write
+
+concurrency:
+  group: atualizar-ofertas
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Buscar ofertas na Shopee
+        env:
+          SHOPEE_APP_ID: ${{ secrets.SHOPEE_APP_ID }}
+          SHOPEE_SECRET: ${{ secrets.SHOPEE_SECRET }}
+        run: python3 scripts/atualizar_ofertas.py
+
+      - name: Publicar se mudou
+        run: |
+          if git diff --quiet; then
+            echo "Nada mudou."
+            exit 0
+          fi
+          git config user.name "seuborracheiro-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Ofertas atualizadas automaticamente"
+          git push
