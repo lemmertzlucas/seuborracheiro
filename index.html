@@ -22,9 +22,10 @@ header.topo{background:radial-gradient(600px 160px at 8% 50%,rgba(255,196,0,.22)
 .busca{flex:1;display:flex;align-items:center;background:#fff;border-radius:999px;padding:0 16px;height:44px}
 .busca svg{width:18px;color:#888}.busca input{flex:1;border:0;outline:0;font:inherit;font-size:.98rem;padding:0 10px;min-width:0}
 .ajuda{display:flex;align-items:center;gap:8px;font-size:.85rem;line-height:1.15;white-space:nowrap}.ajuda svg{width:26px}
-nav.cats{display:flex;justify-content:center;gap:42px;padding:6px 16px 14px;font-weight:800;font-size:.95rem}
+nav.cats{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 26px;padding:6px 16px 14px;font-weight:800;font-size:.95rem}
 nav.cats a{display:flex;align-items:center;gap:8px;opacity:.92}nav.cats a:hover{color:var(--am)}
-nav.cats svg{width:30px;height:20px}
+nav.cats svg{width:26px;height:20px}
+nav.cats a.on{color:var(--am)}
 nav.cats .em{font-size:.62rem;background:var(--am);color:#000;border-radius:4px;padding:1px 5px;margin-left:2px}
 /* banner */
 .banner{background:#0d0d0d;color:#fff;position:relative;overflow:hidden}
@@ -121,8 +122,13 @@ footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}foo
   <a class="ajuda" href="#leia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6M12 17h.01"/></svg>Como ler a<br>medida do pneu</a>
  </div>
  <nav class="cats">
-  <a href="#" data-cat="carro"><svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17h3m34 0h3V12l-6-2-6-5H16l-7 5-5 1v6"/><circle cx="12" cy="17" r="3"/><circle cx="36" cy="17" r="3"/></svg>Carro, Caminhonete e SUV</a>
-  <a href="#" data-cat="agricola"><svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="34" cy="15" r="7"/><circle cx="10" cy="18" r="4"/><path d="M14 18h13M6 14V7h12l4 7M18 7V3h6"/></svg>Agrícola e trator</a>
+  <a href="#" data-cat="carro"><svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17h3m34 0h3V12l-6-2-6-5H16l-7 5-5 1v6"/><circle cx="12" cy="17" r="3"/><circle cx="36" cy="17" r="3"/></svg>Carro e SUV</a>
+  <a href="#" data-cat="moto"><svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="17" r="5"/><circle cx="38" cy="17" r="5"/><path d="M10 17l8-8h8l6 8h6M26 9l-3-5h5"/></svg>Moto</a>
+  <a href="#" data-cat="agricola"><svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="34" cy="15" r="7"/><circle cx="10" cy="18" r="4"/><path d="M14 18h13M6 14V7h12l4 7M18 7V3h6"/></svg>Agrícola</a>
+  <a href="#" data-cat="carrinho"><svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="17" r="4"/><path d="M14 15h22l6-9H18zM42 6l4 12"/></svg>Carrinho de mão</a>
+  <a href="#" data-cat="camaras"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>Câmaras de ar</a>
+  <a href="#" data-cat="rodas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg>Rodas e calotas</a>
+  <a href="#" data-cat="valvulas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6M9 8h6v4H9zM10 12v10h4V12"/></svg>Válvulas</a>
  </nav>
 </header>
 
@@ -154,7 +160,7 @@ footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}foo
 <div class="w ben">
  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5M21 12a9 9 0 0 1-15 6.7L3 16m0 5v-5h5"/></svg><span><b>Ofertas atualizadas</b>revisadas todo dia</span></div>
  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span><b>Compra segura</b>direto na Shopee</span></div>
- <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg><span><b>Entrega pela loja</b>pra todo o Brasil</span></div>
+ <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg><span><b>Entrega pela Shopee</b>pra todo o Brasil</span></div>
  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2.2 0 3 6 1.6 6 4.6 0 1.3-1.3 2.2-3 2.2-1.4 0-2.6-.6-3-1.6M12 6v2m0 8v2"/></svg><span><b>Sem custo extra</b>mesmo preço da loja</span></div>
 </div>
 
@@ -197,20 +203,47 @@ const PRODUTOS = [
  {marca:"Goodyear",modelo:"Kelly Edge Sport 2 91V",medida:"205/55R16",categoria:"carro",qtd:2,preco:929.99,off:11,img:"br-11134207-7r98o-m8f829watqmpc7",link:"AKc7wpS8jC"},
  {marca:"Pioneiro",modelo:"Agrícola para trator",medida:"7.50-16",categoria:"agricola",qtd:1,preco:540.00,off:0,img:"sg-11134201-7reow-m8xpp70kujo507",link:"9zzHYHjOIo"},
  {marca:"Remold",modelo:"Agrícola remoldado (selo Inmetro)",medida:"7.50-16",categoria:"agricola",qtd:2,preco:792.28,off:11,img:"br-11134207-7r98o-lo92n6yowchz1d",link:"7fbMm09Saj"},
- {marca:"Tratorito",modelo:"Agrícola 4 lonas",medida:"4.00-8",categoria:"agricola",qtd:1,preco:281.80,off:3,img:"sg-11134201-82588-mru9wcs9t0ci18",link:"8pnKA9IYxW"}
+ {marca:"Tratorito",modelo:"Agrícola 4 lonas",medida:"4.00-8",categoria:"agricola",qtd:1,preco:281.80,off:3,img:"sg-11134201-82588-mru9wcs9t0ci18",link:"8pnKA9IYxW"},
+ {marca:"Dunlop",modelo:"SP Touring R1 82T",medida:"175/70R13",categoria:"carro",qtd:1,preco:393.00,off:40,img:"br-11134207-820la-mu3p9u14xc7543",link:"5Au1oBZGcD"},
+ {marca:"Hankook",modelo:"Kinergy ST H735 82T",medida:"175/70R13",categoria:"carro",qtd:4,preco:1662.96,off:18,img:"sg-11134201-823ri-mozvcd5t3uvgd0",link:"6q2FnFfz50"},
+ {marca:"Dunlop",modelo:"SP Touring R1 82T",medida:"175/70R13",categoria:"carro",qtd:4,preco:1726.94,off:12,img:"sg-11134201-821ej-mgic1dwovdvwac",link:"1BvehNjZx"},
+ {marca:"Xbri",modelo:"Fastway G1 85V",medida:"195/55R15",categoria:"carro",qtd:4,preco:1437.23,off:17,img:"sg-11134201-823py-mozzf5u2yej224",link:"gRcRwTSG6"},
+ {marca:"Kumho",modelo:"Ecsta HS52 85V",medida:"195/55R15",categoria:"carro",qtd:1,preco:667.52,off:12,img:"sg-11134201-8259y-mu2m79vm48w477",link:"114SqYjRMI"},
+ {marca:"Xbri",modelo:"Fastway G1 85V",medida:"195/55R15",categoria:"carro",qtd:2,preco:735.93,off:15,img:"sg-11134201-823pi-mozzgkpa68sta9",link:"30pXEEpMyl"},
+ {marca:"Kenda",nome:"Kit 2 pneus Kenda Thorax K677 2.50-18 (CG, Pop)",medida:"2.50-18",categoria:"moto",qtd:2,preco:394.00,off:0,img:"br-11134207-7r98o-m9ul930nh16h60",link:"AAIhlQRjqQ"},
+ {marca:"Rinaldi",nome:"Par Rinaldi BS32: traseiro 90/90-18 + dianteiro 2.75-18 (Titan, Fan)",medida:"90/90-18",categoria:"moto",qtd:2,preco:214.70,off:29,img:"br-11134207-820mf-mutasdaidb7ka4",link:"1qdZq7B8x7"},
+ {marca:"Moto",nome:"Pneu traseiro 90/90-18 sem câmara (CG Honda)",medida:"90/90-18",categoria:"moto",qtd:1,preco:104.99,off:0,img:"br-11134207-820lr-mrxj1go6gbgk2e",link:"2qW71xOrm2"},
+ {marca:"Câmara",nome:"Câmara de ar aro 13/14 alta resistência",medida:"Aro 13/14",categoria:"camaras",qtd:1,preco:43.59,off:9,img:"sg-11134201-7ravj-mamv642f26aqff",link:"3B8xQLBaL6"},
+ {marca:"Flexen",nome:"Câmara de ar Flexen aro 13/14 para carro",medida:"Aro 13/14",categoria:"camaras",qtd:1,preco:41.99,off:0,img:"br-11134207-81z1k-mig1uc2jkf0h00",link:"114SqMbQtH"},
+ {marca:"Câmara",nome:"Par de câmaras de ar aro 13/14 para carro",medida:"Aro 13/14",categoria:"camaras",qtd:2,preco:87.31,off:8,img:"br-11134207-7r98o-lwq2zmgl4u4y45",link:"6VPPOTTLla"},
+ {marca:"Câmara",nome:"Câmara de ar aro 14/15 (Gol, Onix, Saveiro)",medida:"Aro 14/15",categoria:"camaras",qtd:1,preco:46.00,off:0,img:"br-11134207-820ma-mqqjnb4oi5fm24",link:"1W0jRI4Sqx"},
+ {marca:"Moto",nome:"Câmara de ar moto aro 18 traseira (410-18)",medida:"Aro 18",categoria:"camaras",qtd:1,preco:34.90,off:0,img:"br-11134207-820lf-mqgjcheam0w30d",link:"7pumz9J6Fs"},
+ {marca:"Carrinho",nome:"Kit pneu + câmara 3.25-8 para carrinho de mão",medida:"3.25-8",categoria:"carrinho",qtd:1,preco:38.99,off:81,img:"sg-11134201-7rdxc-md21e9w9jeo0ad",link:"7Af6BjqkIV"},
+ {marca:"Carrinho",nome:"Pneu completo 3,25x8 com aro e câmara (carriola)",medida:"3.25-8",categoria:"carrinho",qtd:1,preco:69.42,off:22,img:"br-11134207-820md-mv3mckixn5dsf9",link:"20x02FNGpA"},
+ {marca:"Carrinho",nome:"Pneu tipo trator extra forte 150 kg 3,25/3,50x8",medida:"3.25-8",categoria:"carrinho",qtd:1,preco:79.44,off:0,img:"sg-11134201-8258a-mqwt1lsvfgg3b7",link:"3g5E1JU7nv"},
+ {marca:"Maciço",nome:"Pneu maciço em PU que não fura (RD011G)",medida:"Maciço",categoria:"carrinho",qtd:1,preco:139.97,off:0,img:"sg-11134201-7rce5-lt4gcbylfwtn2c",link:"60T8nbdFlI"},
+ {marca:"Rodas",nome:"Jogo de rodas aro 15 4x98 K76 (Uno, Palio, Mobi, Argo, Strada)",medida:"Aro 15",categoria:"rodas",qtd:4,preco:3189.27,off:0,img:"br-11134207-820ln-mrf9q9ipro5g42",link:"ql2e9DiJR"},
+ {marca:"Calotas",nome:"Jogo de calotas Fiat aro 14 (Palio, Argo, Uno, Cronos)",medida:"Aro 14",categoria:"rodas",qtd:4,preco:127.35,off:25,img:"sg-11134201-825ar-mugxavriqm130c",link:"60T8nf6QWf"},
+ {marca:"Calotas",nome:"Jogo de 4 calotas aro 14 com emblemas (roda de ferro)",medida:"Aro 14",categoria:"rodas",qtd:4,preco:199.90,off:0,img:"sg-11134201-825a4-ms9wzbhd3jsx95",link:"9V30y66e5c"},
+ {marca:"Válvulas",nome:"Válvula TR414 para pneu sem câmara (100 unidades)",medida:"TR414",categoria:"valvulas",qtd:1,preco:55.90,off:0,img:"br-11134207-7r98o-m94m5mb49lx5ce",link:"7KyWO8IXtw"},
+ {marca:"Válvulas",nome:"Kit 4 bicos de válvula TR-414 para pneu sem câmara",medida:"TR414",categoria:"valvulas",qtd:1,preco:11.90,off:0,img:"br-11134207-81z1k-mfk6uujlh81z5b",link:"6VPPObZKX3"},
+ {marca:"Válvulas",nome:"Bicos de válvula TR414 para pneu sem câmara (50 unidades)",medida:"TR414",categoria:"valvulas",qtd:1,preco:39.37,off:0,img:"sg-11134201-821g2-mgzgtpj1vhmxbb",link:"1LhJF7AfP1"}
 ];
 /* ===== FIM DOS DADOS ===== */
 
 const CORES={Firestone:["#d71920","#fff"],Goodyear:["#003a8c","#ffd100"],Continental:["#ffa500","#000"],Pirelli:["#ffd100","#d6001c"],Bridgestone:["#e6e6e6","#111"],Kumho:["#e60012","#fff"],Barum:["#ffe000","#0a3a8c"],Michelin:["#27509b","#fff"],Dunlop:["#ffd200","#111"],Ceat:["#0055a5","#fff"],Nexen:["#5b2d8e","#fff"],Westlake:["#003b7a","#fff"],Pioneiro:["#2e7d32","#fff"],Remold:["#555","#fff"],Tratorito:["#6d4c41","#fff"]};
 const $=id=>document.getElementById(id);
 const pneuSVG='<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#222"/><circle cx="50" cy="50" r="30" fill="#c8c8c8"/><circle cx="50" cy="50" r="9" fill="#777"/></svg>';
-const img=p=>IMG+encodeURIComponent(p.img)+".webp";
-const link=p=>LNK+p.link;
+const img=p=>/^https?:/.test(p.img)?p.img:IMG+encodeURIComponent(p.img)+".webp";
+const link=p=>/^https?:/.test(p.link)?p.link:LNK+p.link;
 const brl=v=>"R$ "+v.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
 const off=p=>p.off||0;
 const parte=m=>{const x=m.match(/(\d+)\/(\d+)R(\d+)/);return x?{l:x[1],a:x[2],r:x[3]}:{l:"",a:"",r:""}};
-const kit=p=>p.qtd>1?(p.qtd===4?"Jogo com 4 pneus":"Kit com "+p.qtd+" pneus"):"1 pneu";
-const fotoHTML=p=>`<img src="${img(p)}" alt="Pneu ${p.marca} ${p.modelo} ${p.medida}" loading="lazy" onerror="this.outerHTML=pneuSVG">`;
+const PNEU=p=>["carro","moto","agricola"].includes(p.categoria);
+const CATS={carro:"Pneus de <em>carro, caminhonete e SUV</em>",moto:"Pneus de <em>moto</em>",agricola:"Pneus <em>agrícolas</em>",carrinho:"Pneus de <em>carrinho de mão</em>",camaras:"Câmaras <em>de ar</em>",rodas:"Rodas <em>e calotas</em>",valvulas:"Válvulas <em>e bicos</em>"};
+const titulo=p=>p.nome||`${p.medida} ${p.marca} ${p.modelo}`;
+const kit=p=>PNEU(p)?(p.qtd>1?(p.qtd===4?"Jogo com 4 pneus":"Kit com "+p.qtd+" pneus"):"1 pneu"):(p.qtd>1?(p.categoria==="rodas"?"Jogo com "+p.qtd:"Kit com "+p.qtd):"Medida: "+p.medida);
+const fotoHTML=p=>`<img src="${img(p)}" alt="${titulo(p)}" loading="lazy" onerror="this.outerHTML=pneuSVG">`;
 
 function card(p){
  const [bg,fg]=CORES[p.marca]||["#222","#fff"],o=off(p);
@@ -218,10 +251,10 @@ function card(p){
   <span class="marca" style="background:${bg};color:${fg}">${p.marca}</span>
   <a class="foto" href="${link(p)}" target="_blank" rel="noopener sponsored nofollow">${fotoHTML(p)}${o?`<span class="pil">${o}% OFF</span>`:""}</a>
   <div class="acoes"><a href="${link(p)}" target="_blank" rel="noopener sponsored nofollow">Ver oferta ›</a></div>
-  <div class="inf"><h4>${p.medida} ${p.marca} ${p.modelo}</h4>
+  <div class="inf"><h4>${titulo(p)}</h4>
    <div class="kit">${kit(p)}</div>
    <div class="por">${brl(p.preco)}</div>
-   ${p.qtd>1?`<div class="eco">${brl(p.preco/p.qtd)} cada pneu</div>`:""}<div class="loja">na Shopee</div></div>
+   ${p.qtd>1&&PNEU(p)?`<div class="eco">${brl(p.preco/p.qtd)} cada pneu</div>`:""}<div class="loja">na Shopee</div></div>
  </article>`;
 }
 
@@ -229,10 +262,11 @@ function card(p){
 const ord=[...PRODUTOS].sort((a,b)=>off(b)-off(a));
 const carros=PRODUTOS.filter(p=>p.categoria==="carro");
 $("atualiz").textContent="Preços consultados em "+ATUALIZADO_EM+". Podem mudar a qualquer momento.";
-$("maxoff").textContent=off(ord[0])+"%";
+const ordC=ord.filter(p=>p.categoria==="carro");
+$("maxoff").textContent=off(ordC[0])+"%";
 $("menor").textContent="R$"+Math.floor(Math.min(...carros.map(p=>p.preco/p.qtd)));
-$("pilha1").innerHTML=ord.slice(0,3).map(p=>`<img src="${img(p)}" alt="">`).join("");
-$("pilha2").innerHTML=ord.slice(3,6).map(p=>`<img src="${img(p)}" alt="">`).join("");
+$("pilha1").innerHTML=ordC.slice(0,3).map(p=>`<img src="${img(p)}" alt="">`).join("");
+$("pilha2").innerHTML=ordC.slice(3,6).map(p=>`<img src="${img(p)}" alt="">`).join("");
 const slides=[...document.querySelectorAll(".slide")];let s=0;
 const dots=document.querySelector(".dots");slides.forEach((_,i)=>{const d=document.createElement("i");d.onclick=()=>ir(i);dots.appendChild(d)});
 function ir(i){s=(i+slides.length)%slides.length;slides.forEach((x,j)=>x.classList.toggle("on",j===s));[...dots.children].forEach((x,j)=>x.classList.toggle("on",j===s))}
@@ -249,19 +283,19 @@ function render(){
  const q=filtro.q.toLowerCase().replace(/\s/g,"");
  const lista=ord.filter(p=>{const m=parte(p.medida);
   return (q?true:p.categoria===filtro.cat)&&(!filtro.l||m.l===filtro.l)&&(!filtro.a||m.a===filtro.a)&&(!filtro.r||m.r===filtro.r)&&(!filtro.marca||p.marca===filtro.marca)
-   &&(!q||(p.medida+p.marca+p.modelo+p.categoria).toLowerCase().replace(/\s/g,"").includes(q))});
+   &&(!q||(titulo(p)+p.medida+p.categoria).toLowerCase().replace(/\s/g,"").includes(q))});
  $("grade").innerHTML=lista.map(card).join("");
  const desc=[filtro.l&&("largura "+filtro.l),filtro.a&&("altura "+filtro.a),filtro.r&&("aro "+filtro.r),filtro.marca,filtro.q&&("“"+filtro.q+"”")].filter(Boolean).join(", ");
- $("tt").innerHTML=desc?`Resultado: <em>${desc}</em>`:(filtro.cat==="agricola"?"Pneus <em>agrícolas</em>":"Pneus de <em>carro, caminhonete e SUV</em>");
+ $("tt").innerHTML=desc?`Resultado: <em>${desc}</em>`:CATS[filtro.cat];
  const v=!lista.length;$("vazio").classList.toggle("on",v);
  if(v){$("vt").textContent="Ainda não temos oferta pra essa busca";$("vx").textContent="Tenta outra medida ou volta amanhã, que a gente atualiza as ofertas todo dia."}
 }
-$("trilho").innerHTML=ord.slice(0,8).map(card).join("");
+$("trilho").innerHTML=ord.filter(PNEU).slice(0,8).map(card).join("");
 document.querySelectorAll(".ctr button").forEach(b=>b.onclick=()=>$("trilho").scrollBy({left:+b.dataset.m*264,behavior:"smooth"}));
 $("fm").onsubmit=e=>{e.preventDefault();Object.assign(filtro,{cat:"carro",l:$("sl").value,a:$("sa").value,r:$("sr").value,q:"",marca:""});$("q").value="";render();$("todas").scrollIntoView({behavior:"smooth"})};
 $("q").oninput=()=>{filtro.q=$("q").value.trim();render()};
 $("q").onkeydown=e=>{if(e.key==="Enter")$("todas").scrollIntoView({behavior:"smooth"})};
-document.querySelectorAll("nav.cats a").forEach(a=>a.onclick=e=>{e.preventDefault();filtro={cat:a.dataset.cat,l:"",a:"",r:"",q:"",marca:""};$("q").value="";render();$("todas").scrollIntoView({behavior:"smooth"})});
+document.querySelectorAll("nav.cats a").forEach(a=>a.onclick=e=>{e.preventDefault();document.querySelectorAll("nav.cats a").forEach(x=>x.classList.toggle("on",x===a));filtro={cat:a.dataset.cat,l:"",a:"",r:"",q:"",marca:""};$("q").value="";render();$("todas").scrollIntoView({behavior:"smooth"})});
 /* marcas */
 $("marcas").innerHTML=[...new Set(carros.map(p=>p.marca))].map(m=>{const[bg,fg]=CORES[m]||["#222","#fff"];return`<button style="background:${bg};color:${fg}" data-m="${m}">${m}</button>`}).join("");
 document.querySelectorAll("#marcas button").forEach(b=>b.onclick=()=>{filtro={cat:"carro",l:"",a:"",r:"",q:"",marca:b.dataset.m};$("q").value="";render();$("todas").scrollIntoView({behavior:"smooth"})});
