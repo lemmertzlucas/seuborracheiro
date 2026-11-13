@@ -68,24 +68,39 @@
 </main>
 
 <footer>
-  Este site participa de programas de afiliados (Amazon Associados e PneuStore). Ao comprar pelos links,
-  podemos receber uma comissão, sem custo extra para você. Preços e disponibilidade podem mudar a qualquer momento.
+  Como Associado da Amazon, o Seu Borracheiro ganha com compras qualificadas. Ao comprar pelos links, podemos
+  receber uma comissão, sem custo extra para você. Preços e disponibilidade são os vistos na data de atualização
+  indicada no topo e podem mudar a qualquer momento; o preço que vale é o mostrado na loja no momento da compra.
 </footer>
 
 <script>
 /* ===== DADOS — a rotina automática vai reescrever só este bloco ===== */
-const ATUALIZADO_EM = "13/11/2026";
+const ATUALIZADO_EM = "13/11/2026 às 14h";
 const PRODUTOS = [
-  { nome:"Pneu Aro 15 195/55R15 85V (exemplo)", categoria:"carro", medida:"195/55R15", loja:"Amazon",
-    preco:389.90, precoAntigo:459.90, link:"https://www.amazon.com.br/dp/XXXXXXXX?tag=SEU-TAG-20" },
-  { nome:"Pneu Aro 14 175/70R14 84T (exemplo)", categoria:"carro", medida:"175/70R14", loja:"Amazon",
-    preco:299.90, precoAntigo:329.90, link:"https://www.amazon.com.br/dp/XXXXXXXX?tag=SEU-TAG-20" },
-  { nome:"Pneu Aro 16 205/55R16 91V (exemplo)", categoria:"carro", medida:"205/55R16", loja:"Amazon",
-    preco:429.90, precoAntigo:519.90, link:"https://www.amazon.com.br/dp/XXXXXXXX?tag=SEU-TAG-20" },
-  { nome:"Pneu Agrícola 18.4-30 R1 10 lonas (exemplo)", categoria:"agricola", medida:"18.4-30", loja:"PneuStore",
-    preco:4890.00, precoAntigo:5590.00, link:"https://www.pneustore.com.br/SEU-LINK-DE-AFILIADO" },
-  { nome:"Pneu Agrícola 14.9-24 R1 8 lonas (exemplo)", categoria:"agricola", medida:"14.9-24", loja:"PneuStore",
-    preco:2790.00, precoAntigo:3150.00, link:"https://www.pneustore.com.br/SEU-LINK-DE-AFILIADO" }
+  { nome:"Pneu Firestone F-600 175/70R14 84T", categoria:"carro", medida:"175/70R14", loja:"Amazon",
+    preco:303.36, precoAntigo:401.13, link:"https://www.amazon.com.br/dp/B07XBTY36X?tag=seuborracheir-20" },
+  { nome:"Pneu Kumho ES31 175/70R14 84T", categoria:"carro", medida:"175/70R14", loja:"Amazon",
+    preco:293.71, precoAntigo:345.55, link:"https://www.amazon.com.br/dp/B0DMFVZ935?tag=seuborracheir-20" },
+  { nome:"Pneu Continental PowerContact 2 175/70R14 84T", categoria:"carro", medida:"175/70R14", loja:"Amazon",
+    preco:359.82, precoAntigo:423.33, link:"https://www.amazon.com.br/dp/B07X9V7PLG?tag=seuborracheir-20" },
+  { nome:"Pneu Continental ContiPowerContact 175/65R14 82T", categoria:"carro", medida:"175/65R14", loja:"Amazon",
+    preco:306.33, precoAntigo:425.33, link:"https://www.amazon.com.br/dp/B07XBTXPFK?tag=seuborracheir-20" },
+  { nome:"Pneu Firestone F-600 175/65R14 82T", categoria:"carro", medida:"175/65R14", loja:"Amazon",
+    preco:284.09, precoAntigo:352.95, link:"https://www.amazon.com.br/dp/B0CCW5VXK1?tag=seuborracheir-20" },
+  { nome:"Pneu Goodyear Kelly Edge Touring 2 175/65R14 86H", categoria:"carro", medida:"175/65R14", loja:"Amazon",
+    preco:278.90, precoAntigo:329.90, link:"https://www.amazon.com.br/dp/B0CQ6QYWF6?tag=seuborracheir-20" },
+  { nome:"Pneu Bridgestone Ecopia EP150 185/65R15 88H", categoria:"carro", medida:"185/65R15", loja:"Amazon",
+    preco:450.78, precoAntigo:586.00, link:"https://www.amazon.com.br/dp/B0CCW58QRW?tag=seuborracheir-20" },
+  { nome:"Pneu Continental PowerContact 2 185/65R15 88H", categoria:"carro", medida:"185/65R15", loja:"Amazon",
+    preco:427.93, precoAntigo:503.44, link:"https://www.amazon.com.br/dp/B0H3W4WWRF?tag=seuborracheir-20" },
+  { nome:"Pneu Continental UltraContact 185/65R15 88H", categoria:"carro", medida:"185/65R15", loja:"Amazon",
+    preco:442.52, precoAntigo:520.61, link:"https://www.amazon.com.br/dp/B0H3VNXPZK?tag=seuborracheir-20" },
+  { nome:"Pneu Goodyear Eagle Sport 2 205/55R16 91V", categoria:"carro", medida:"205/55R16", loja:"Amazon",
+    preco:408.49, precoAntigo:578.00, link:"https://www.amazon.com.br/dp/B0BW2S55CF?tag=seuborracheir-20" },
+  { nome:"Pneu Barum Bravuris 5HM 205/55R16 91V (by Continental)", categoria:"carro", medida:"205/55R16", loja:"Amazon",
+    preco:361.16, precoAntigo:460.00, link:"https://www.amazon.com.br/dp/B096SX3JYN?tag=seuborracheir-20" },
+  { nome:"Pneu Pirelli P400 Evo 205/55R16 91V", categoria:"carro", medida:"205/55R16", loja:"Amazon",
+    preco:396.87, precoAntigo:466.89, link:"https://www.amazon.com.br/dp/B0DTRP8PGK?tag=seuborracheir-20" }
 ];
 /* ===== FIM DOS DADOS ===== */
 
@@ -99,7 +114,7 @@ let categoria = "todos";
 const grid = document.getElementById("grid");
 const empty = document.getElementById("empty");
 const search = document.getElementById("search");
-document.getElementById("updated").textContent = "Atualizado em " + ATUALIZADO_EM;
+document.getElementById("updated").textContent = "Preços consultados em " + ATUALIZADO_EM;
 
 function render(){
   const termo = search.value.trim().toLowerCase();
@@ -122,6 +137,7 @@ function render(){
         <a class="btn" href="${p.link}" target="_blank" rel="noopener sponsored">Ver oferta</a>
       </div>
     </article>`).join("");
+  empty.textContent = categoria === "agricola" ? "Ofertas de pneus agrícolas chegando em breve!" : "Nenhum pneu encontrado com esse filtro.";
   empty.hidden = lista.length > 0;
 }
 
