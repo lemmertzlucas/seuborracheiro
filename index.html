@@ -84,9 +84,10 @@ nav.cats .em{font-size:.62rem;background:var(--am);color:#000;border-radius:4px;
 .acoes a.b{background:#fff;color:#444;border:1px solid #ccc}
 .inf{padding:10px 14px 16px;text-align:center;display:flex;flex-direction:column;gap:4px;flex:1}
 .inf h4{margin:0;font-size:1rem;font-weight:800;line-height:1.25;min-height:2.5em}
-.de{font-size:.8rem;color:var(--mt);text-decoration:line-through;margin-top:auto}
+.de{font-size:.8rem;color:var(--mt);text-decoration:line-through}
 .por{font-size:1.55rem;font-weight:900}
 .loja{font-size:.78rem;color:var(--mt)}
+.kit{align-self:center;font-size:.75rem;font-weight:800;background:#fff3cc;color:#7a5a00;border-radius:999px;padding:3px 10px;margin-top:auto}
 .eco{font-size:.8rem;font-weight:800;color:#c58f00}
 .vazio{display:none;text-align:center;background:#fff;border:1px dashed #ccc;border-radius:12px;padding:40px 16px;color:var(--mt)}
 .vazio.on{display:block}.vazio b{display:block;font-size:1.2rem;color:#1b1b1b;margin-bottom:4px}
@@ -121,7 +122,7 @@ footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}foo
  </div>
  <nav class="cats">
   <a href="#" data-cat="carro"><svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17h3m34 0h3V12l-6-2-6-5H16l-7 5-5 1v6"/><circle cx="12" cy="17" r="3"/><circle cx="36" cy="17" r="3"/></svg>Carro, Caminhonete e SUV</a>
-  <a href="#" data-cat="agricola"><svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="34" cy="15" r="7"/><circle cx="10" cy="18" r="4"/><path d="M14 18h13M6 14V7h12l4 7M18 7V3h6"/></svg>Agrícola <span class="em">EM BREVE</span></a>
+  <a href="#" data-cat="agricola"><svg viewBox="0 0 48 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="34" cy="15" r="7"/><circle cx="10" cy="18" r="4"/><path d="M14 18h13M6 14V7h12l4 7M18 7V3h6"/></svg>Agrícola e trator</a>
  </nav>
 </header>
 
@@ -134,7 +135,7 @@ footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}foo
  <div class="slide">
   <div><h2><small>Tá na hora de trocar?</small>Ache o pneu <em>pela medida</em></h2><p>Escolhe largura, altura e aro aqui embaixo e a gente mostra a oferta mais barata.</p></div>
   <div class="pilha" id="pilha2"></div>
-  <div class="selo"><span>a partir de</span><b id="menor" style="font-size:2.6rem">–</b><span>o pneu</span></div>
+  <div class="selo"><span>a partir de</span><b id="menor" style="font-size:2.6rem">–</b><span>cada pneu</span></div>
  </div>
  <button class="seta e" aria-label="Anterior">‹</button><button class="seta d" aria-label="Próximo">›</button>
  <div class="dots"></div>
@@ -152,7 +153,7 @@ footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}foo
 
 <div class="w ben">
  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5M21 12a9 9 0 0 1-15 6.7L3 16m0 5v-5h5"/></svg><span><b>Ofertas atualizadas</b>revisadas todo dia</span></div>
- <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span><b>Compra segura</b>direto em lojas grandes</span></div>
+ <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span><b>Compra segura</b>direto na Shopee</span></div>
  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg><span><b>Entrega pela loja</b>pra todo o Brasil</span></div>
  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2.2 0 3 6 1.6 6 4.6 0 1.3-1.3 2.2-3 2.2-1.4 0-2.6-.6-3-1.6M12 6v2m0 8v2"/></svg><span><b>Sem custo extra</b>mesmo preço da loja</span></div>
 </div>
@@ -173,55 +174,63 @@ footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}foo
  <div class="cod"><div><b>175</b><span>largura (mm)</span></div><div><b>70</b><span>altura (% largura)</span></div><div><b>R14</b><span>aro</span></div><div><b>84T</b><span>carga/velocidade</span></div></div>
 </section>
 
-<footer><div class="w"><p>Como Associado da Amazon, o Seu Borracheiro ganha com compras qualificadas. Ao comprar pelos links, podemos receber uma comissão, sem custo extra pra você. Preços e disponibilidade são os vistos na data de atualização e podem mudar a qualquer momento; vale o preço mostrado na loja na hora da compra.</p><p>© 2026 Seu Borracheiro</p></div></footer>
+<footer><div class="w"><p>O Seu Borracheiro participa do programa de afiliados da Shopee: ao comprar pelos nossos links, podemos receber uma comissão, sem custo extra pra você. Preços e descontos são os vistos na data de atualização e podem mudar a qualquer momento; vale o preço mostrado na loja na hora da compra.</p><p>© 2026 Seu Borracheiro</p></div></footer>
 
 <script>
 /* ===== DADOS — a rotina automática vai reescrever só este bloco ===== */
 const ATUALIZADO_EM = "13/11/2026 às 14h";
+const IMG = "https://down-bs-br.img.susercontent.com/";
+const LNK = "https://s.shopee.com.br/";
 const PRODUTOS = [
- {marca:"Firestone",modelo:"F-600 84T",medida:"175/70R14",categoria:"carro",loja:"Amazon",preco:303.36,precoAntigo:401.13,img:"51p+s68IfwL",asin:"B07XBTY36X"},
- {marca:"Kumho",modelo:"ES31 84T",medida:"175/70R14",categoria:"carro",loja:"Amazon",preco:293.71,precoAntigo:345.55,img:"61-BkRGAl4L",asin:"B0DMFVZ935"},
- {marca:"Continental",modelo:"PowerContact 2 84T",medida:"175/70R14",categoria:"carro",loja:"Amazon",preco:359.82,precoAntigo:423.33,img:"61ESIfENIBL",asin:"B07X9V7PLG"},
- {marca:"Continental",modelo:"ContiPowerContact 82T",medida:"175/65R14",categoria:"carro",loja:"Amazon",preco:306.33,precoAntigo:425.33,img:"61C+Zbiq-bL",asin:"B07XBTXPFK"},
- {marca:"Firestone",modelo:"F-600 82T",medida:"175/65R14",categoria:"carro",loja:"Amazon",preco:284.09,precoAntigo:352.95,img:"71Sfz3VmF-L",asin:"B0CCW5VXK1"},
- {marca:"Goodyear",modelo:"Kelly Edge Touring 2 86H",medida:"175/65R14",categoria:"carro",loja:"Amazon",preco:278.90,precoAntigo:329.90,img:"517AbB3vBgL",asin:"B0CQ6QYWF6"},
- {marca:"Bridgestone",modelo:"Ecopia EP150 88H",medida:"185/65R15",categoria:"carro",loja:"Amazon",preco:450.78,precoAntigo:586.00,img:"61Kf3VtlytL",asin:"B0CCW58QRW"},
- {marca:"Continental",modelo:"PowerContact 2 88H",medida:"185/65R15",categoria:"carro",loja:"Amazon",preco:427.93,precoAntigo:503.44,img:"61RKZzxy2IL",asin:"B0H3W4WWRF"},
- {marca:"Continental",modelo:"UltraContact 88H",medida:"185/65R15",categoria:"carro",loja:"Amazon",preco:442.52,precoAntigo:520.61,img:"61ybrxKuIiL",asin:"B0H3VNXPZK"},
- {marca:"Goodyear",modelo:"Eagle Sport 2 91V",medida:"205/55R16",categoria:"carro",loja:"Amazon",preco:408.49,precoAntigo:578.00,img:"51cmlXNq+vL",asin:"B0BW2S55CF"},
- {marca:"Barum",modelo:"Bravuris 5HM 91V",medida:"205/55R16",categoria:"carro",loja:"Amazon",preco:361.16,precoAntigo:460.00,img:"61a34mfdMtL",asin:"B096SX3JYN"},
- {marca:"Pirelli",modelo:"P400 Evo 91V",medida:"205/55R16",categoria:"carro",loja:"Amazon",preco:396.87,precoAntigo:466.89,img:"61ZNtefZPxL",asin:"B0DTRP8PGK"}
+ {marca:"Dunlop",modelo:"Touring SP R1 88T",medida:"175/70R14",categoria:"carro",qtd:2,preco:1019.79,off:12,img:"sg-11134201-821fd-mgiaowd32ia5cd",link:"2LZqPz0A3w"},
+ {marca:"Ceat",modelo:"Ecodrive 88T",medida:"175/70R14",categoria:"carro",qtd:4,preco:1790.88,off:18,img:"sg-11134201-8259l-msjvyjzqx2bq5b",link:"70LfyZ08FU"},
+ {marca:"Ceat",modelo:"Ecodrive 88T",medida:"175/70R14",categoria:"carro",qtd:1,preco:480.48,off:12,img:"sg-11134201-8227k-mhhzod4mf75x9d",link:"3Vlno8QaRr"},
+ {marca:"Dunlop",modelo:"Touring SP R1 82T",medida:"175/65R14",categoria:"carro",qtd:2,preco:857.44,off:16,img:"sg-11134201-8262h-mju1f2f1mbcybd",link:"7pumyGJBHe"},
+ {marca:"Dunlop",modelo:"Touring SP R1 82T",medida:"175/65R14",categoria:"carro",qtd:1,preco:449.14,off:12,img:"sg-11134201-82603-mkwp3124bsarc6",link:"906kMPWPIE"},
+ {marca:"Pirelli",modelo:"Cinturato P1 82T",medida:"175/65R14",categoria:"carro",qtd:1,preco:518.91,off:11,img:"sg-11134201-8260j-mkwpk0yek8w053",link:"1W0jQdKt9c"},
+ {marca:"Pirelli",modelo:"P400 Evo 88H",medida:"185/65R15",categoria:"carro",qtd:4,preco:2505.36,off:12,img:"sg-11134201-825ag-mt8nzcqe8iyp5f",link:"3qOeCq0xpf"},
+ {marca:"Nexen",modelo:"N'Blue Eco SH01 88H",medida:"185/65R15",categoria:"carro",qtd:1,preco:514.30,off:11,img:"sg-11134201-82621-mkwpa4tks83oe9",link:"9fMR9YwDb0"},
+ {marca:"Westlake",modelo:"SA37 88H",medida:"185/65R15",categoria:"carro",qtd:2,preco:734.45,off:12,img:"sg-11134201-82584-mshdaaf576yp66",link:"3LSNbvXb5T"},
+ {marca:"Continental",modelo:"UltraContact 91V",medida:"205/55R16",categoria:"carro",qtd:1,preco:423.05,off:35,img:"sg-11134201-8261s-mk9vd5qme0hu2a",link:"2gCgojCurs"},
+ {marca:"Continental",modelo:"PowerContact 2 91V",medida:"205/55R16",categoria:"carro",qtd:2,preco:837.93,off:39,img:"br-11134207-820m9-mr68r66t5clh22",link:"1Bvdpf4y7"},
+ {marca:"Dunlop",modelo:"SP Sport FM800 91V",medida:"205/55R16",categoria:"carro",qtd:2,preco:874.99,off:26,img:"br-11134207-81z1k-meu88ursy1hced",link:"6fipa5Sy2Z"},
+ {marca:"Goodyear",modelo:"Kelly Edge Sport 2 91V",medida:"205/55R16",categoria:"carro",qtd:2,preco:929.99,off:11,img:"br-11134207-7r98o-m8f829watqmpc7",link:"AKc7wpS8jC"},
+ {marca:"Pioneiro",modelo:"Agrícola para trator",medida:"7.50-16",categoria:"agricola",qtd:1,preco:540.00,off:0,img:"sg-11134201-7reow-m8xpp70kujo507",link:"9zzHYHjOIo"},
+ {marca:"Remold",modelo:"Agrícola remoldado (selo Inmetro)",medida:"7.50-16",categoria:"agricola",qtd:2,preco:792.28,off:11,img:"br-11134207-7r98o-lo92n6yowchz1d",link:"7fbMm09Saj"},
+ {marca:"Tratorito",modelo:"Agrícola 4 lonas",medida:"4.00-8",categoria:"agricola",qtd:1,preco:281.80,off:3,img:"sg-11134201-82588-mru9wcs9t0ci18",link:"8pnKA9IYxW"}
 ];
-const TAG = "seuborracheir-20";
 /* ===== FIM DOS DADOS ===== */
 
-const CORES={Firestone:["#d71920","#fff"],Goodyear:["#003a8c","#ffd100"],Continental:["#ffa500","#000"],Pirelli:["#ffd100","#d6001c"],Bridgestone:["#e6e6e6","#111"],Kumho:["#e60012","#fff"],Barum:["#ffe000","#0a3a8c"],Michelin:["#27509b","#fff"]};
+const CORES={Firestone:["#d71920","#fff"],Goodyear:["#003a8c","#ffd100"],Continental:["#ffa500","#000"],Pirelli:["#ffd100","#d6001c"],Bridgestone:["#e6e6e6","#111"],Kumho:["#e60012","#fff"],Barum:["#ffe000","#0a3a8c"],Michelin:["#27509b","#fff"],Dunlop:["#ffd200","#111"],Ceat:["#0055a5","#fff"],Nexen:["#5b2d8e","#fff"],Westlake:["#003b7a","#fff"],Pioneiro:["#2e7d32","#fff"],Remold:["#555","#fff"],Tratorito:["#6d4c41","#fff"]};
 const $=id=>document.getElementById(id);
 const pneuSVG='<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#222"/><circle cx="50" cy="50" r="30" fill="#c8c8c8"/><circle cx="50" cy="50" r="9" fill="#777"/></svg>';
-const img=p=>"https://m.media-amazon.com/images/I/"+encodeURIComponent(p.img)+"._AC_SL400_.jpg";
-const link=p=>"https://www.amazon.com.br/dp/"+p.asin+"?tag="+TAG;
+const img=p=>IMG+encodeURIComponent(p.img)+".webp";
+const link=p=>LNK+p.link;
 const brl=v=>"R$ "+v.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
-const off=p=>p.precoAntigo>p.preco?Math.round((1-p.preco/p.precoAntigo)*100):0;
-const parte=m=>{const x=m.match(/(\d+)\/(\d+)R(\d+)/);return{l:x[1],a:x[2],r:x[3]}};
+const off=p=>p.off||0;
+const parte=m=>{const x=m.match(/(\d+)\/(\d+)R(\d+)/);return x?{l:x[1],a:x[2],r:x[3]}:{l:"",a:"",r:""}};
+const kit=p=>p.qtd>1?(p.qtd===4?"Jogo com 4 pneus":"Kit com "+p.qtd+" pneus"):"1 pneu";
 const fotoHTML=p=>`<img src="${img(p)}" alt="Pneu ${p.marca} ${p.modelo} ${p.medida}" loading="lazy" onerror="this.outerHTML=pneuSVG">`;
 
 function card(p){
- const [bg,fg]=CORES[p.marca]||["#222","#fff"],o=off(p),e=p.precoAntigo-p.preco;
+ const [bg,fg]=CORES[p.marca]||["#222","#fff"],o=off(p);
  return `<article class="card">
   <span class="marca" style="background:${bg};color:${fg}">${p.marca}</span>
   <a class="foto" href="${link(p)}" target="_blank" rel="noopener sponsored nofollow">${fotoHTML(p)}${o?`<span class="pil">${o}% OFF</span>`:""}</a>
   <div class="acoes"><a href="${link(p)}" target="_blank" rel="noopener sponsored nofollow">Ver oferta ›</a></div>
   <div class="inf"><h4>${p.medida} ${p.marca} ${p.modelo}</h4>
-   ${o?`<div class="de">${brl(p.precoAntigo)}</div>`:""}<div class="por">${brl(p.preco)}</div>
-   ${e>0?`<div class="eco">Economize ${brl(e)}</div>`:""}<div class="loja">na ${p.loja}</div></div>
+   <div class="kit">${kit(p)}</div>
+   <div class="por">${brl(p.preco)}</div>
+   ${p.qtd>1?`<div class="eco">${brl(p.preco/p.qtd)} cada pneu</div>`:""}<div class="loja">na Shopee</div></div>
  </article>`;
 }
 
 /* banner */
 const ord=[...PRODUTOS].sort((a,b)=>off(b)-off(a));
+const carros=PRODUTOS.filter(p=>p.categoria==="carro");
 $("atualiz").textContent="Preços consultados em "+ATUALIZADO_EM+". Podem mudar a qualquer momento.";
 $("maxoff").textContent=off(ord[0])+"%";
-$("menor").textContent="R$"+Math.floor(Math.min(...PRODUTOS.map(p=>p.preco)));
+$("menor").textContent="R$"+Math.floor(Math.min(...carros.map(p=>p.preco/p.qtd)));
 $("pilha1").innerHTML=ord.slice(0,3).map(p=>`<img src="${img(p)}" alt="">`).join("");
 $("pilha2").innerHTML=ord.slice(3,6).map(p=>`<img src="${img(p)}" alt="">`).join("");
 const slides=[...document.querySelectorAll(".slide")];let s=0;
@@ -231,7 +240,7 @@ document.querySelector(".seta.e").onclick=()=>ir(s-1);document.querySelector(".s
 ir(0);setInterval(()=>ir(s+1),6000);
 
 /* busca por medida */
-const uniq=k=>[...new Set(PRODUTOS.map(p=>parte(p.medida)[k]))].sort((a,b)=>a-b);
+const uniq=k=>[...new Set(carros.map(p=>parte(p.medida)[k]))].sort((a,b)=>a-b);
 const opt=(el,vals,lbl)=>{el.innerHTML=`<option value="">${lbl}</option>`+vals.map(v=>`<option>${v}</option>`).join("")};
 opt($("sl"),uniq("l"),"Todas");opt($("sa"),uniq("a"),"Todas");opt($("sr"),uniq("r"),"Todos");
 
@@ -239,24 +248,23 @@ let filtro={cat:"carro",l:"",a:"",r:"",q:"",marca:""};
 function render(){
  const q=filtro.q.toLowerCase().replace(/\s/g,"");
  const lista=ord.filter(p=>{const m=parte(p.medida);
-  return p.categoria===filtro.cat&&(!filtro.l||m.l===filtro.l)&&(!filtro.a||m.a===filtro.a)&&(!filtro.r||m.r===filtro.r)&&(!filtro.marca||p.marca===filtro.marca)
-   &&(!q||(p.medida+p.marca+p.modelo).toLowerCase().replace(/\s/g,"").includes(q))});
+  return (q?true:p.categoria===filtro.cat)&&(!filtro.l||m.l===filtro.l)&&(!filtro.a||m.a===filtro.a)&&(!filtro.r||m.r===filtro.r)&&(!filtro.marca||p.marca===filtro.marca)
+   &&(!q||(p.medida+p.marca+p.modelo+p.categoria).toLowerCase().replace(/\s/g,"").includes(q))});
  $("grade").innerHTML=lista.map(card).join("");
  const desc=[filtro.l&&("largura "+filtro.l),filtro.a&&("altura "+filtro.a),filtro.r&&("aro "+filtro.r),filtro.marca,filtro.q&&("“"+filtro.q+"”")].filter(Boolean).join(", ");
- $("tt").innerHTML=desc?`Resultado: <em>${desc}</em>`:"Todas as <em>ofertas</em>";
+ $("tt").innerHTML=desc?`Resultado: <em>${desc}</em>`:(filtro.cat==="agricola"?"Pneus <em>agrícolas</em>":"Pneus de <em>carro, caminhonete e SUV</em>");
  const v=!lista.length;$("vazio").classList.toggle("on",v);
- if(v){if(filtro.cat==="agricola"){$("vt").textContent="Pneus agrícolas chegando em breve";$("vx").textContent="Estamos fechando parceria com lojas de pneu agrícola. Logo as ofertas de pneu de trator aparecem aqui."}
-  else{$("vt").textContent="Ainda não temos oferta pra essa busca";$("vx").textContent="Tenta outra medida ou volta amanhã, que a gente atualiza as ofertas todo dia."}}
+ if(v){$("vt").textContent="Ainda não temos oferta pra essa busca";$("vx").textContent="Tenta outra medida ou volta amanhã, que a gente atualiza as ofertas todo dia."}
 }
 $("trilho").innerHTML=ord.slice(0,8).map(card).join("");
 document.querySelectorAll(".ctr button").forEach(b=>b.onclick=()=>$("trilho").scrollBy({left:+b.dataset.m*264,behavior:"smooth"}));
 $("fm").onsubmit=e=>{e.preventDefault();Object.assign(filtro,{cat:"carro",l:$("sl").value,a:$("sa").value,r:$("sr").value,q:"",marca:""});$("q").value="";render();$("todas").scrollIntoView({behavior:"smooth"})};
-$("q").oninput=()=>{filtro.q=$("q").value.trim();filtro.cat="carro";render()};
+$("q").oninput=()=>{filtro.q=$("q").value.trim();render()};
 $("q").onkeydown=e=>{if(e.key==="Enter")$("todas").scrollIntoView({behavior:"smooth"})};
-document.querySelectorAll("nav.cats a").forEach(a=>a.onclick=e=>{e.preventDefault();filtro={cat:a.dataset.cat,l:"",a:"",r:"",q:"",marca:""};render();$("todas").scrollIntoView({behavior:"smooth"})});
+document.querySelectorAll("nav.cats a").forEach(a=>a.onclick=e=>{e.preventDefault();filtro={cat:a.dataset.cat,l:"",a:"",r:"",q:"",marca:""};$("q").value="";render();$("todas").scrollIntoView({behavior:"smooth"})});
 /* marcas */
-$("marcas").innerHTML=[...new Set(PRODUTOS.map(p=>p.marca))].map(m=>{const[bg,fg]=CORES[m]||["#222","#fff"];return`<button style="background:${bg};color:${fg}" data-m="${m}">${m}</button>`}).join("");
-document.querySelectorAll("#marcas button").forEach(b=>b.onclick=()=>{filtro={cat:"carro",l:"",a:"",r:"",q:"",marca:b.dataset.m};render();$("todas").scrollIntoView({behavior:"smooth"})});
+$("marcas").innerHTML=[...new Set(carros.map(p=>p.marca))].map(m=>{const[bg,fg]=CORES[m]||["#222","#fff"];return`<button style="background:${bg};color:${fg}" data-m="${m}">${m}</button>`}).join("");
+document.querySelectorAll("#marcas button").forEach(b=>b.onclick=()=>{filtro={cat:"carro",l:"",a:"",r:"",q:"",marca:b.dataset.m};$("q").value="";render();$("todas").scrollIntoView({behavior:"smooth"})});
 render();
 </script>
 </body>
